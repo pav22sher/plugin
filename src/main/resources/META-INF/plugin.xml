@@ -73,6 +73,11 @@
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Sample Calendar"
+                    secondary="true"
+                    icon="AllIcons.Toolwindows.WebToolWindow"
+                    anchor="right"
+                    factoryClass="com.example.plugin.toolWindow.CalendarToolWindowFactory"/>
         <!--<typedHandler implementation="com.example.plugin.editor.MyTypedHandler"/>-->
         <localInspection language="JAVA"
                          bundle="messages.InspectionBundle"
