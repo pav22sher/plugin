@@ -73,6 +73,11 @@
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                                 parentId="tools"
+                                 instance="com.example.plugin.settings.AppSettingsConfigurable"
+                                 displayName="SDK: Application Settings Example"/>
+        <applicationService serviceImplementation="com.example.plugin.settings.AppSettingsState"/>
         <toolWindow id="Sample Calendar"
                     secondary="true"
                     icon="AllIcons.Toolwindows.WebToolWindow"
