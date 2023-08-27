@@ -4,6 +4,8 @@
     <vendor email="scherbak.pavel5@yandex.ru" url="https://www.yourcompany.com">OpenCode</vendor>
     <description><![CDATA[Просмотр примеров для реализации своего плагина]]></description>
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <!--Урок 1-->
     <actions>
         <action id="org.intellij.sdk.action.PopupDialogAction"
                 class="com.example.plugin.action.PopupDialogAction"
@@ -46,4 +48,16 @@
             <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
         </group>
     </actions>
+    <!--Урок 2-->
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection language="JAVA"
+                         bundle="messages.InspectionBundle"
+                         key="inspection.comparing.string.references.display.name"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="com.example.plugin.inspection.ComparingStringReferencesInspection"/>
+    </extensions>
 </idea-plugin>
