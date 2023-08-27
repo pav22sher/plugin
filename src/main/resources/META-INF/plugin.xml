@@ -60,4 +60,10 @@
                          level="WARNING"
                          implementationClass="com.example.plugin.inspection.ComparingStringReferencesInspection"/>
     </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <intentionAction>
+            <className>com.example.plugin.intention.ConditionalOperatorConverter</className>
+            <category>SDK intentions</category>
+        </intentionAction>
+    </extensions>
 </idea-plugin>
