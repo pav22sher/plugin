@@ -87,5 +87,6 @@
             <className>com.example.plugin.intention.ConditionalOperatorConverter</className>
             <category>SDK intentions</category>
         </intentionAction>
+        <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
     </extensions>
 </idea-plugin>
