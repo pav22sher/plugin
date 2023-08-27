@@ -99,5 +99,6 @@
         </intentionAction>
         <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
         <treeStructureProvider implementation="com.example.plugin.tree.TextOnlyTreeStructureProvider"/>
+        <configurationType implementation="com.example.plugin.runConfiguration.DemoRunConfigurationType"/>
     </extensions>
 </idea-plugin>
