@@ -88,6 +88,5 @@
             <category>SDK intentions</category>
         </intentionAction>
         <themeProvider id="eb9b7461-397b-4b98-a422-224fc0a74564" path="/theme_basics.theme.json"/>
-        <facetType implementation="com.example.plugin.facet.DemoFacetType"/>
     </extensions>
 </idea-plugin>
