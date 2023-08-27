@@ -5,7 +5,7 @@
     <description><![CDATA[Просмотр примеров для реализации своего плагина]]></description>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
-    <!--Урок 1-->
+
     <actions>
         <action id="org.intellij.sdk.action.PopupDialogAction"
                 class="com.example.plugin.action.PopupDialogAction"
@@ -47,9 +47,33 @@
                icon="Icons.Sdk_default_icon">
             <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
         </group>
+
+        <action id="EditorBasics.EditorIllustrationAction"
+                class="com.example.plugin.editor.EditorIllustrationAction"
+                text="Editor Replace Text"
+                description="Replaces selected text with 'Replacement'."
+                icon="Icons.Sdk_default_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="EditorBasics.EditorHandlerIllustration"
+                class="com.example.plugin.editor.EditorHandlerIllustration"
+                text="Editor Add Caret"
+                description="Adds a second caret below the existing one."
+                icon="Icons.Sdk_default_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="EditorBasics.LogicalPositionIllustration"
+                class="com.example.plugin.editor.EditorAreaIllustration"
+                text="Caret Position"
+                description="Reports information about the caret position."
+                icon="Icons.Sdk_default_icon">
+        <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
+        <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
     </actions>
-    <!--Урок 2-->
+
     <extensions defaultExtensionNs="com.intellij">
+        <!--<typedHandler implementation="com.example.plugin.editor.MyTypedHandler"/>-->
         <localInspection language="JAVA"
                          bundle="messages.InspectionBundle"
                          key="inspection.comparing.string.references.display.name"
@@ -59,8 +83,6 @@
                          enabledByDefault="true"
                          level="WARNING"
                          implementationClass="com.example.plugin.inspection.ComparingStringReferencesInspection"/>
-    </extensions>
-    <extensions defaultExtensionNs="com.intellij">
         <intentionAction>
             <className>com.example.plugin.intention.ConditionalOperatorConverter</className>
             <category>SDK intentions</category>
