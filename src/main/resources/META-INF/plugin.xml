@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>com.example.plugin</id>
+    <name>Example</name>
+    <vendor email="scherbak.pavel5@yandex.ru" url="https://www.yourcompany.com">OpenCode</vendor>
+    <description><![CDATA[Просмотр примеров для реализации своего плагина]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <actions>
+        <action id="org.intellij.sdk.action.PopupDialogAction"
+                class="com.example.plugin.action.PopupDialogAction"
+                text="Action Basics Plugin: Pop Dialog Action"
+                description="SDK action example"
+                icon="Icons.Sdk_default_icon">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <override-text place="MainMenu" text="Pop Dialog Action"/>
+            <keyboard-shortcut first-keystroke="alt A" keymap="$default"/>
+            <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+        </action>
+        <group id="org.intellij.sdk.action.GroupedActions"
+               text="Static Grouped Actions"
+               description="SDK statically grouped action example"
+               popup="true"
+               icon="Icons.Sdk_default_icon">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopupDialogAction"/>
+            <action id="org.intellij.sdk.action.GroupPopDialogAction"
+                    class="com.example.plugin.action.PopupDialogAction"
+                    text="A Group Action"
+                    description="SDK static grouped action example"
+                    icon="Icons.Sdk_default_icon">
+            </action>
+        </group>
+        <group id="org.intellij.sdk.action.CustomDefaultActionGroup"
+               class="com.example.plugin.action.CustomDefaultActionGroup"
+               popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <action id="org.intellij.sdk.action.CustomGroupedAction"
+                    class="com.example.plugin.action.PopupDialogAction"
+                    icon="Icons.Sdk_default_icon">
+            </action>
+        </group>
+        <group id="org.intellij.sdk.action.DynamicActionGroup"
+               class="com.example.plugin.action.DynamicActionGroup"
+               popup="true"
+               text="Dynamically Grouped Actions"
+               description="SDK dynamically grouped action example"
+               icon="Icons.Sdk_default_icon">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
+        </group>
+    </actions>
+</idea-plugin>
